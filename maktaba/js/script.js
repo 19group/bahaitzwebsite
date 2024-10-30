@@ -229,4 +229,19 @@
       hidePreloader();
     });
 
+    document.addEventListener('DOMContentLoaded', function() {
+      // Attach click event listener to all links with the 'open-pdf-viewer' class
+      document.querySelectorAll('.open-pdf-viewer').forEach(link => {
+          link.addEventListener('click', function(event) {
+              event.preventDefault();  // Prevent the default link behavior
+  
+              const pdfUrl = this.dataset.pdfUrl;  // Get the PDF URL from the data attribute
+              
+              // Open the PDF in the custom PDF viewer
+              window.open(`pdfviewer.html?file=${encodeURIComponent(pdfUrl)}`, '_blank');
+          });
+      });
+  });
+  
+
 })(jQuery);

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="sw">
   <head>
-    <title>Bahá’í Media Bank</title>
+    <title>Maktaba ya Bahá’í</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,11 +18,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js"></script>
+  
+
     <style>
       .card img {
         max-width: 200px;
         margin: 0 auto;
         display: block;
+      }
+
+      #pdf-viewer {
+        width: 100%;
+        height: 100vh;
+        overflow: auto;
+        padding: 20px;
+      }
+      canvas {
+        display: block;
+        margin: 0 auto 20px; /* Center canvas and add bottom margin */
+        max-width: 100%; /* Make sure the canvas does not exceed the screen width */
+        height: auto; /* Adjust the height to maintain the aspect ratio */
       }
     </style>
 
@@ -31,6 +48,8 @@
 	<link rel="shortcut icon" href="../../../favicon.png" >
   </head>
   <body>
+    
+
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
       <symbol id="search" xmlns="http://www.w3.org/2000/symbolsvg" viewBox="0 0 24 24">
         <path fill="currentColor" fill-rule="evenodd"
@@ -175,7 +194,7 @@
                 </button>
                 
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <li><a class="dropdown-item" href="../../../">Nyumbani</a></li>
+                  <li><a class="dropdown-item" href="./index.html">Rudi Nyuma</a></li>
                   <li><a class="dropdown-item" href="../../../maktaba/">Maktaba</a></li>
                   <li><a class="dropdown-item" href="../../../media-bank/">Picha</a></li>
                   <li><a class="dropdown-item" href="#mawasiliano">Mawasiliano</a></li>
@@ -185,7 +204,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul id="navbar" class="navbar-nav text-uppercase justify-content-end flex-grow-1">
                   <li class="nav-item">
-                      <a class="nav-link me-4 active" href="../../">Nyumbani</a>
+                    <a class="nav-link me-4 active" href="./index.html">Rudi Nyuma</a>
                   </li>
                   <li class="nav-item">
                       <a class="nav-link me-4" href="../../../maktaba">Maktaba</a>
@@ -205,57 +224,16 @@
       </nav>
   </header>
 
-
-    <section class="hero-section bg-light py-5">
-      <div class="container text-start">
-        <div class="row">
-            <div class="col-md-8">
-                <h1 class="display-4 hero-text font-weight-bold">Barua kutoka Nyumba ya Haki ya Ulimwengu</h1>
-
-            </div>
-        </div>
-          <!-- <p class="lead">The Bahá’í Media Bank provides photographs for download, intended for non-commercial purposes only.</p> -->
-      </div>
-    </section>
-
-  <!-- <section id="categories" class="padding-small">
-    <div class="container">
-      <div class="section-title overflow-hidden mb-4">
-        <h3 class="d-flex align-items-center">Categories</h3>
-      </div>
-
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card mb-4 border-0 rounded-3 position-relative">
-            <a href="#nyumbayahaki" class="text-white">
-              <img src="images/category1.jpg" class="img-fluid rounded-3" alt="cart item">
-              <h6 class=" position-absolute bottom-0 bg-primary m-4 py-2 px-3 rounded-3">
-                  Nyumba ya Haki ya Ulimwengu</h6>
-            </a>
-          </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div id="pdf-viewer" class="bg-white shadow-sm p-3 rounded">
+          <!-- PDF will be rendered here -->
         </div>
       </div>
     </div>
-  </section> -->
-
-<!-- Administration & Agencies -->
-<section id="nyumbayahaki" class="position-relative padding-small">
-  <div class="container">
-    <!-- <div class="section-title d-md-flex justify-content-between align-items-center mb-4">
-      <a><h3 class="d-flex align-items-center">Utawala Na Mawakala</h3></a>
-    </div>
-    <p>Picha zinazohusiana na mashirika ya utawala na mashirika ya Imani ya Kibahá’í, pamoja na alama zinazohusiana na Imani ya Bahá’í.</p> -->
-
-    <div class="row" id="nyumbayahaki-container">
-      <!-- json literall -->
-    </div>
-
-    
-
-    
   </div>
-  <div id="pdf-viewer" style="width: 100%; height: 600px; overflow: auto;"></div>
-</section>
+
 
 
 <!-- End Instagram-->
@@ -358,6 +336,8 @@
     <script type="text/javascript" src="../../js/add-data.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js"></script>
+    <script type="text/javascript" src="../../js/pdfviewer.js"></script>
+    
 
   </body>
 </html>
